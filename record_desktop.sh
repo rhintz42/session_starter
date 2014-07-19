@@ -23,7 +23,10 @@ elif echo "$HOST" | grep -q "$SUBSTRING2"; then
     echo "${SUBSTRING} is not in ${HOST}, but ${SUBSTRING2} is in ${HOST}"
     echo "${RESOLUTION_SIZE}"
     #TODO - Add way of checking resolution and making modifications where necessary
-    gnome-terminal -x avconv -f x11grab -r 1 -s 1920x1080 -i :0.0+2560,520 -vcodec libx264 -preset ultrafast -threads 4 -y $1.mp4
+    #gnome-terminal -x avconv -f x11grab -r 1 -s 1920x1080 -i :0.0+2560,520 -vcodec libx264 -preset ultrafast -threads 4 -y $1.mp4
+    #gnome-terminal -x avconv -f x11grab -r 1 -s 1920x1080 -i :0.0+1366,0 -vcodec libx264 -preset ultrafast -threads 4 -y $1.mp4
+    gnome-terminal -x avconv -f x11grab -r 1 -s 1920x1080 -i :0.0+2560,0 -vcodec libx264 -preset ultrafast -threads 4 -y $1.mp4
+    #gnome-terminal -x avconv -f x11grab -r 1 -s 1366x768 -i :0.0 -vcodec libx264 -preset ultrafast -threads 4 -y test.mp4
 else
     echo "No Proper Computer Choices Found. Please Add your Computer Settings to the File"
 fi
